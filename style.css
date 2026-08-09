@@ -269,7 +269,10 @@ h2 {
     grid-template-columns: 1fr 1fr;
 
     align-items: center;
-
+max-width: 1400px;
+margin: 70px auto;
+overflow: hidden;
+object-fit: cover;
     overflow: hidden;
 }
 
