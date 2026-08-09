@@ -432,6 +432,14 @@ h2 {
 
     margin: 75px auto;
 }
+.name-intro h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: #77725f;
+    margin: 30px auto 25px;
+}
 
 .name-intro h2 {
     margin: 0;
