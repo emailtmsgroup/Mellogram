@@ -267,7 +267,7 @@ h2 {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
-
+    margin:40px auto;
     align-items: center;
     max-width: 1400px;
     overflow: hidden;
