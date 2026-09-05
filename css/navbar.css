@@ -1,3 +1,31 @@
+
+:root {
+
+    --primary: #254235;
+    --primary-dark: #183126;
+
+    --cream: #f7f3ea;
+    --cream-dark: #ece5d7;
+
+    --white: #ffffff;
+
+    --text: #1f2822;
+    --text-light: #687069;
+
+    --gold: #b68b4c;
+    --border: #ddd7cb;
+
+    --heading-font: "Playfair Display", serif;
+    --body-font: "DM Sans", sans-serif;
+
+    --container-width: 1280px;
+
+    --transition: all 0.3s ease;
+
+}
+
+
+
 .top-bar {
 
     background: var(--primary-dark);
