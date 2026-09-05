@@ -751,120 +751,182 @@
     </div>
 
 
+<form
+    action="https://formsubmit.co/emailtmsgroup@gmail.com"
+    method="POST"
+    class="enquiry-form"
+>
 
-    <form class="enquiry-form">
+    <!-- EMAIL CONFIGURATION -->
 
+    <input
+        type="hidden"
+        name="_subject"
+        value="New Mellogram Website Enquiry"
+    >
 
-        <div class="form-row">
+    <input
+        type="hidden"
+        name="_template"
+        value="table"
+    >
 
-            <input type="text"
-                   placeholder="Full Name *"
-                   required>
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
 
+    <!-- OPTIONAL: REDIRECT AFTER SUBMISSION -->
 
-            <input type="text"
-                   placeholder="Company Name (Optional)">
-
-        </div>
-
-
-
-        <div class="form-row">
-
-            <input type="email"
-                   placeholder="Email *"
-                   required>
-
-
-            <input type="tel"
-                   placeholder="Phone Number *"
-                   required>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-
-            <select>
-
-                <option>
-                    What are you looking for?
-                </option>
-
-                <option>
-                    Corporate Gifting
-                </option>
-
-                <option>
-                    Personal Gifting
-                </option>
-
-                <option>
-                    Birthday Gifting
-                </option>
-
-                <option>
-                    Anniversary Gifting
-                </option>
-
-                <option>
-                    Diwali Gifting
-                </option>
-
-            </select>
+    <input
+        type="hidden"
+        name="_next"
+        value="thank-you.html"
+    >
 
 
+    <!-- NAME + COMPANY -->
 
-            <input type="number"
-                   placeholder="Number of Gifts">
+    <div class="form-row">
 
-
-            <select>
-
-                <option>
-                    Budget Per Gift
-                </option>
-
-                <option>
-                    ₹500 - ₹1,000
-                </option>
-
-                <option>
-                    ₹1,000 - ₹2,000
-                </option>
-
-                <option>
-                    ₹2,000 - ₹5,000
-                </option>
-
-                <option>
-                    ₹5,000+
-                </option>
-
-            </select>
-
-        </div>
+        <input
+            type="text"
+            name="Full Name"
+            placeholder="Full Name *"
+            required
+        >
 
 
+        <input
+            type="text"
+            name="Company Name"
+            placeholder="Company Name (Optional)"
+        >
 
-        <textarea
-            placeholder="Tell us about your requirement...">
-        </textarea>
+    </div>
+
+
+    <!-- EMAIL + PHONE -->
+
+    <div class="form-row">
+
+        <input
+            type="email"
+            name="Email Address"
+            placeholder="Email *"
+            required
+        >
+
+
+        <input
+            type="tel"
+            name="Phone Number"
+            placeholder="Phone Number *"
+            required
+        >
+
+    </div>
+
+
+    <!-- GIFTING REQUIREMENT -->
+
+    <div class="form-row">
+
+
+        <select
+            name="Gifting Requirement"
+            required
+        >
+
+            <option value="" selected disabled>
+                What are you looking for?
+            </option>
+
+            <option value="Corporate Gifting">
+                Corporate Gifting
+            </option>
+
+            <option value="Personal Gifting">
+                Personal Gifting
+            </option>
+
+            <option value="Birthday Gifting">
+                Birthday Gifting
+            </option>
+
+            <option value="Anniversary Gifting">
+                Anniversary Gifting
+            </option>
+
+            <option value="Diwali Gifting">
+                Diwali Gifting
+            </option>
+
+        </select>
 
 
 
-        <button type="submit"
-                class="primary-button">
+        <input
+            type="number"
+            name="Number of Gifts"
+            placeholder="Number of Gifts"
+            min="1"
+        >
 
-            Submit Enquiry
 
-            <span>→</span>
+        <select
+            name="Budget Per Gift"
+        >
 
-        </button>
+            <option value="" selected disabled>
+                Budget Per Gift
+            </option>
 
-    </form>
+            <option value="₹500 - ₹1,000">
+                ₹500 - ₹1,000
+            </option>
+
+            <option value="₹1,000 - ₹2,000">
+                ₹1,000 - ₹2,000
+            </option>
+
+            <option value="₹2,000 - ₹5,000">
+                ₹2,000 - ₹5,000
+            </option>
+
+            <option value="₹5,000+">
+                ₹5,000+
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <textarea
+        name="Requirement Details"
+        placeholder="Tell us about your requirement..."
+        rows="5"
+    ></textarea>
+
+
+    <!-- SUBMIT BUTTON -->
+
+    <button
+        type="submit"
+        class="primary-button"
+    >
+
+        Submit Enquiry
+
+        <span>→</span>
+
+    </button>
+
+</form>
 
 </section>
 
