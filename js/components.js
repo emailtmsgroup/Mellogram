@@ -37,6 +37,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+    const footerContainer =
+        document.getElementById("footer-container");
+
+    if (!navbarContainer) {
+        return;
+    }
+
+    fetch("components/footer.html")
+        .then(function (response) {
+
+            if (!response.ok) {
+                throw new Error(
+                    "Navbar file could not be loaded"
+                );
+            }
+
+            return response.text();
+
+        })
+
+        .then(function (data) {
+
+            footerContainer.innerHTML = data;
+
+            initializeMobileMenu();
+
+        })
+
+        .catch(function (error) {
+
+            console.error(
+                "Error loading footer:",
+                error
+            );
+
+        });
+
 });
 
 
