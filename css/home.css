@@ -20,6 +20,8 @@
     grid-template-columns: 1fr 1fr;
 
     background: var(--cream);
+    padding: 80px max(5%, calc((100vw - var(--container-width)) / 2));
+
 
 }
 
@@ -188,6 +190,8 @@
 .occasion-section {
 
     background: var(--white);
+    padding: 100px max(5%, calc((100vw - var(--container-width)) / 2));
+
 
 }
 
@@ -312,6 +316,8 @@
     align-items: center;
 
     background: var(--cream-dark);
+    padding: 100px max(5%, calc((100vw - var(--container-width)) / 2));
+
 
 }
 
@@ -388,6 +394,8 @@
 .featured-hampers {
 
     background: var(--white);
+    padding: 100px max(5%, calc((100vw - var(--container-width)) / 2));
+
 
 }
 
@@ -462,6 +470,8 @@
     gap: 80px;
 
     align-items: start;
+     padding: 100px max(5%, calc((100vw - var(--container-width)) / 2));
+
 
 }
 
@@ -615,6 +625,25 @@
 }
 
 
+/* =========================================
+   BRAND VALUES
+========================================= */
+
+.brand-values {
+
+    padding: 55px max(5%, calc((100vw - var(--container-width)) / 2));
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    background: var(--cream-dark);
+
+}
+
+
 .brand-values > div {
 
     display: flex;
@@ -624,8 +653,6 @@
     justify-content: center;
 
     gap: 12px;
-
-    text-align: center;
 
 }
 
@@ -639,9 +666,11 @@
 
 .brand-values p {
 
-    font-size: 0.78rem;
+    font-size: 0.82rem;
 
-    font-weight: 500;
+    font-weight: 600;
+
+    color: var(--text);
 
 }
 
@@ -662,14 +691,36 @@
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-    .occasion-grid {
-        grid-template-columns: 1fr;
+    .brand-values {
+
+        padding: 45px 25px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+
     }
 
-    .occasion-card {
-        height: 380px;
+
+    .brand-values > div {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .brand-values {
+
+        grid-template-columns: 1fr;
+
+        padding: 40px 25px;
+
     }
 
 }
