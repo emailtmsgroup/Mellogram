@@ -756,7 +756,7 @@
     class="enquiry-form"
 >
 
-    <!-- EMAIL CONFIGURATION -->
+    <!-- FormSubmit Configuration -->
 
     <input
         type="hidden"
@@ -770,15 +770,8 @@
         value="table"
     >
 
- 
-    <!-- disable CAPTCHA -->
-<!-- 
-    <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-    > -->
-    <!-- OPTIONAL: REDIRECT AFTER SUBMISSION -->
+    <!-- CAPTCHA ENABLED -->
+    <!-- Do not add _captcha=false -->
 
     <input
         type="hidden"
@@ -786,9 +779,6 @@
         value="https://mellogram.in/thank-you.html"
     >
 
-
-
-    <!-- NAME + COMPANY -->
 
     <div class="form-row">
 
@@ -799,7 +789,6 @@
             required
         >
 
-
         <input
             type="text"
             name="Company Name"
@@ -809,17 +798,14 @@
     </div>
 
 
-    <!-- EMAIL + PHONE -->
-
     <div class="form-row">
 
         <input
             type="email"
-            name="Email Address"
+            name="Email"
             placeholder="Email *"
             required
         >
-
 
         <input
             type="tel"
@@ -831,15 +817,9 @@
     </div>
 
 
-    <!-- GIFTING REQUIREMENT -->
-
     <div class="form-row">
 
-
-        <select
-            name="Gifting Requirement"
-            required
-        >
+        <select name="Gifting Requirement" required>
 
             <option value="" selected disabled>
                 What are you looking for?
@@ -868,18 +848,14 @@
         </select>
 
 
-
         <input
             type="number"
             name="Number of Gifts"
             placeholder="Number of Gifts"
-            min="1"
         >
 
 
-        <select
-            name="Budget Per Gift"
-        >
+        <select name="Budget Per Gift">
 
             <option value="" selected disabled>
                 Budget Per Gift
@@ -906,16 +882,11 @@
     </div>
 
 
-    <!-- MESSAGE -->
-
     <textarea
         name="Requirement Details"
         placeholder="Tell us about your requirement..."
-        rows="5"
     ></textarea>
 
-
-    <!-- SUBMIT BUTTON -->
 
     <button
         type="submit"
@@ -929,7 +900,6 @@
     </button>
 
 </form>
-
 </section>
 
 
