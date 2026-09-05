@@ -17,3 +17,25 @@
     letter-spacing: 0.3px;
 
 }
+
+
+.navbar {
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(245, 240, 229, 0.92);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(80, 70, 50, 0.08);
+}
