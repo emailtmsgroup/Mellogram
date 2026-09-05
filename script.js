@@ -1,65 +1,101 @@
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", () => {
 
-menuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-});
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
+    const menuButton =
+        document.getElementById("menuButton");
 
-const mobileLinks = mobileMenu.querySelectorAll("a");
-
-mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-    });
-});
-
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
-
-if (menuButton && mobileMenu) {
-    menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-    });
-}
+    const mobileMenu =
+        document.getElementById("mobileMenu");
 
 
-const revealElements = document.querySelectorAll(
-    ".principle-card, .promise-item, .philosophy-content, .name-story"
-);
+    if (menuButton && mobileMenu) {
 
+        menuButton.addEventListener("click", () => {
 
-const observer = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-
-                entry.target.style.transform = "translateY(0)";
-
-            }
+            mobileMenu.classList.toggle("active");
 
         });
 
-    },
-    {
-        threshold: 0.15
+
+        const mobileLinks =
+            mobileMenu.querySelectorAll("a");
+
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+            });
+
+        });
+
     }
-);
 
 
-revealElements.forEach(element => {
+    /* =========================================
+       SCROLL REVEAL ANIMATION
+    ========================================= */
 
-    element.style.opacity = "0";
+    const revealElements =
+        document.querySelectorAll(
+            ".principle-card, .promise-item, .philosophy-content, .name-story"
+        );
 
-    element.style.transform = "translateY(25px)";
 
-    element.style.transition =
-        "opacity 0.8s ease, transform 0.8s ease";
+    if (
+        revealElements.length > 0 &&
+        "IntersectionObserver" in window
+    ) {
 
-    observer.observe(element);
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.style.opacity = "1";
+
+                            entry.target.style.transform =
+                                "translateY(0)";
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        revealElements.forEach(element => {
+
+            element.style.opacity = "0";
+
+            element.style.transform =
+                "translateY(25px)";
+
+            element.style.transition =
+                "opacity 0.8s ease, transform 0.8s ease";
+
+
+            observer.observe(element);
+
+        });
+
+    }
 
 });
