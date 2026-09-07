@@ -1,23 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
-       LOAD NAVBAR
+       LOAD COMPONENT FUNCTION
     ========================================= */
 
-    const navbarContainer =
-        document.getElementById("navbar-container");
+    function loadComponent(
+        containerId,
+        componentPath
+    ) {
+
+        const container =
+            document.getElementById(containerId);
 
 
-    if (navbarContainer) {
+        if (!container) {
+            return;
+        }
 
-        fetch("components/navbar.html")
+
+        fetch(componentPath)
 
             .then((response) => {
 
                 if (!response.ok) {
 
                     throw new Error(
-                        "Navbar could not be loaded"
+                        `Could not load ${componentPath}`
                     );
 
                 }
@@ -28,14 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
             .then((data) => {
 
-                navbarContainer.innerHTML = data;
+                container.innerHTML = data;
+
+
+                /* Notify other scripts that
+                   the component is loaded */
+
+                document.dispatchEvent(
+                    new CustomEvent(
+                        "componentLoaded",
+                        {
+                            detail: {
+                                containerId:
+                                    containerId
+                            }
+                        }
+                    )
+                );
 
             })
 
             .catch((error) => {
 
                 console.error(
-                    "Navbar loading error:",
+                    "Component loading error:",
                     error
                 );
 
@@ -45,46 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
+       LOAD NAVBAR
+    ========================================= */
+
+    loadComponent(
+        "navbar-container",
+        "components/navbar.html"
+    );
+
+
+    /* =========================================
        LOAD FOOTER
     ========================================= */
 
-    const footerContainer =
-        document.getElementById("footer-container");
-
-
-    if (footerContainer) {
-
-        fetch("components/footer.html")
-
-            .then((response) => {
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Footer could not be loaded"
-                    );
-
-                }
-
-                return response.text();
-
-            })
-
-            .then((data) => {
-
-                footerContainer.innerHTML = data;
-
-            })
-
-            .catch((error) => {
-
-                console.error(
-                    "Footer loading error:",
-                    error
-                );
-
-            });
-
-    }
+    loadComponent(
+        "footer-container",
+        "components/footer.html"
+    );
 
 });
