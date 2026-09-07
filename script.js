@@ -4,37 +4,47 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE MENU
     ========================================= */
 
-    const menuButton =
-        document.getElementById("menuButton");
+    document.addEventListener("click", (event) => {
 
-    const mobileMenu =
-        document.getElementById("mobileMenu");
+        const menuButton =
+            event.target.closest("#menuButton");
 
-
-    if (menuButton && mobileMenu) {
-
-        menuButton.addEventListener("click", () => {
-
-            mobileMenu.classList.toggle("active");
-
-        });
+        const mobileLink =
+            event.target.closest("#mobileMenu a");
 
 
-        const mobileLinks =
-            mobileMenu.querySelectorAll("a");
+        /* Toggle Mobile Menu */
+
+        if (menuButton) {
+
+            const mobileMenu =
+                document.getElementById("mobileMenu");
+
+            if (mobileMenu) {
+
+                mobileMenu.classList.toggle("active");
+
+            }
+
+        }
 
 
-        mobileLinks.forEach(link => {
+        /* Close Menu After Clicking a Link */
 
-            link.addEventListener("click", () => {
+        if (mobileLink) {
+
+            const mobileMenu =
+                document.getElementById("mobileMenu");
+
+            if (mobileMenu) {
 
                 mobileMenu.classList.remove("active");
 
-            });
+            }
 
-        });
+        }
 
-    }
+    });
 
 
     /* =========================================
@@ -55,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const observer =
             new IntersectionObserver(
 
-                entries => {
+                (entries) => {
 
-                    entries.forEach(entry => {
+                    entries.forEach((entry) => {
 
                         if (entry.isIntersecting) {
 
@@ -66,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             entry.target.style.transform =
                                 "translateY(0)";
 
-                            observer.unobserve(entry.target);
+                            observer.unobserve(
+                                entry.target
+                            );
 
                         }
 
@@ -81,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-        revealElements.forEach(element => {
+        revealElements.forEach((element) => {
 
             element.style.opacity = "0";
 
@@ -90,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             element.style.transition =
                 "opacity 0.8s ease, transform 0.8s ease";
-
 
             observer.observe(element);
 
