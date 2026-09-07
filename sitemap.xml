@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://mellogram.in/</loc>
+    </url>
+
+    <url>
+        <loc>https://mellogram.in/index.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mellogram.in/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mellogram.in/diwali.html</loc>
+    </url>
+
+    <!-- <url>
+        <loc>https://mellogram.in/corporate-gifting.html</loc>
+    </url> -->
+
+    <!-- <url>
+        <loc>https://mellogram.in/personal-gifting.html</loc>
+    </url> -->
+<!-- 
+    <url>
+        <loc>https://mellogram.in/birthday.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mellogram.in/anniversary.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mellogram.in/special-occasions.html</loc>
+    </url> -->
+
+</urlset>
