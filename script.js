@@ -9,42 +9,70 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuButton =
             event.target.closest("#menuButton");
 
+
         const mobileLink =
             event.target.closest("#mobileMenu a");
 
 
-        /* Toggle Mobile Menu */
+        const mobileMenu =
+            document.getElementById("mobileMenu");
 
-        if (menuButton) {
 
-            const mobileMenu =
-                document.getElementById("mobileMenu");
+        /* =====================================
+           OPEN / CLOSE MOBILE MENU
+        ===================================== */
 
-            if (mobileMenu) {
+        if (menuButton && mobileMenu) {
 
-                mobileMenu.classList.toggle("active");
-
-            }
+            mobileMenu.classList.toggle(
+                "active"
+            );
 
         }
 
 
-        /* Close Menu After Clicking a Link */
+        /* =====================================
+           CLOSE MENU AFTER LINK CLICK
+        ===================================== */
 
-        if (mobileLink) {
+        if (mobileLink && mobileMenu) {
 
-            const mobileMenu =
-                document.getElementById("mobileMenu");
-
-            if (mobileMenu) {
-
-                mobileMenu.classList.remove("active");
-
-            }
+            mobileMenu.classList.remove(
+                "active"
+            );
 
         }
 
     });
+
+
+    /* =========================================
+       CLOSE MENU WHEN WINDOW RESIZES
+    ========================================= */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            const mobileMenu =
+                document.getElementById(
+                    "mobileMenu"
+                );
+
+
+            if (
+                mobileMenu &&
+                window.innerWidth > 900
+            ) {
+
+                mobileMenu.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
 
 
     /* =========================================
@@ -53,13 +81,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const revealElements =
         document.querySelectorAll(
-            ".principle-card, .promise-item, .philosophy-content, .name-story"
+
+            ".principle-card, " +
+            ".promise-item, " +
+            ".philosophy-content, " +
+            ".name-story"
+
         );
 
 
     if (
+
         revealElements.length > 0 &&
+
         "IntersectionObserver" in window
+
     ) {
 
         const observer =
@@ -67,22 +103,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 (entries) => {
 
-                    entries.forEach((entry) => {
+                    entries.forEach(
+                        (entry) => {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.style.opacity = "1";
+                                entry.target.style.opacity =
+                                    "1";
 
-                            entry.target.style.transform =
-                                "translateY(0)";
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
 
@@ -93,19 +136,27 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-        revealElements.forEach((element) => {
+        revealElements.forEach(
+            (element) => {
 
-            element.style.opacity = "0";
+                element.style.opacity = "0";
 
-            element.style.transform =
-                "translateY(25px)";
 
-            element.style.transition =
-                "opacity 0.8s ease, transform 0.8s ease";
+                element.style.transform =
+                    "translateY(25px)";
 
-            observer.observe(element);
 
-        });
+                element.style.transition =
+                    "opacity 0.8s ease, " +
+                    "transform 0.8s ease";
+
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
 
     }
 
